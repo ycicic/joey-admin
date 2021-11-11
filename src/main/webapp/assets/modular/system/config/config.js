@@ -19,7 +19,6 @@ layui.use(['layer', 'form', 'table', 'util', 'admin', 'func', 'HttpRequest'], fu
 
     /* 字典类型-点击新增对话框 */
     DictType.openAddDlg = function (data) {
-        console.log(data);
         func.open({
             title: '添加系统配置',
             content: Feng.ctxPath + '/view/config/addView?groupCode=' + data.dictCode,

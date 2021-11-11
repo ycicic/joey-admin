@@ -1,0 +1,40 @@
+@layout("/layout/_form.html",{js:["/assets/modular/joey/case/case_group_add.js"]}){
+
+<form class="layui-form" id="caseGroupForm" lay-filter="caseGroupForm">
+    <div class="layui-fluid" style="padding-bottom: 75px;">
+        <div class="layui-card">
+            <div class="layui-card-body">
+                <div class="layui-form-item layui-row">
+                    <input name="id" type="hidden"/>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label layui-form-required">所属模块</label>
+                        <div class="layui-input-block">
+                            <input name="module" placeholder="请输入所属模块" type="text" class="layui-input" lay-verify="required" required autocomplete="off"/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label layui-form-required">启用状态</label>
+                        <div class="layui-input-block">
+                            <select id="isRun" name="isRun">
+                                <option value="1">启用</option>
+                                <option value="0">禁用</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <textarea id="comment" name="comment" placeholder="请输入备注" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-bottom text-center">
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+        <button type="reset" class="layui-btn layui-btn-primary" ew-event="closeDialog">&emsp;取消&emsp;</button>
+    </div>
+
+</form>
+@}

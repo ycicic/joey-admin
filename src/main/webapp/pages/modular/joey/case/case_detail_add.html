@@ -1,0 +1,85 @@
+@layout("/layout/_form.html",{js:["/assets/modular/joey/case/case_detail_add.js"]}){
+
+<link href="https://cdn.bootcdn.net/ajax/libs/jsoneditor/9.5.3/jsoneditor.min.css" rel="stylesheet">
+<script src="https://cdn.bootcdn.net/ajax/libs/jsoneditor/9.5.3/jsoneditor.min.js"></script>
+
+<style>
+    .jsoneditor {
+        border-color: rgb(230, 230, 230);
+    }
+</style>
+
+<form class="layui-form" id="caseDetailForm" lay-filter="caseDetailForm">
+    <div class="layui-fluid" style="padding-bottom: 75px;">
+        <div class="layui-card">
+            <div class="layui-card-body">
+                <div class="layui-form-item layui-row">
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label layui-form-required">用例组ID</label>
+                        <div class="layui-input-block">
+                            <input id="groupId" name="groupId" disabled type="text" class="layui-input"
+                                   autocomplete="off"/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label layui-form-required">执行渠道</label>
+                        <div class="layui-input-block">
+                            <select id="protocolType" name="protocolType">
+                                <option value="HTTP">HTTP</option>
+                                <option value="RPC">RPC</option>
+                                <option value="MQ">MQ</option>
+                                <option value="TIMER">TIMER</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label layui-form-required">启用状态</label>
+                        <div class="layui-input-block">
+                            <select id="isRun" name="isRun">
+                                <option value="1">启用</option>
+                                <option value="0">禁用</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">执行数据</label>
+                        <div class="layui-input-block">
+                            <input id="requestData" name="requestData" value="{}" type="hidden"/>
+                            <div id="requestDataInput"></div>
+                            <div id="requestDataView"></div>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">预期结果</label>
+                        <div class="layui-input-block">
+                            <input name="preResult" placeholder="请输入预期结果" type="text" class="layui-input"
+                                   autocomplete="off"/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label layui-form-required">是否缓存</label>
+                        <div class="layui-input-block">
+                            <select id="isCache" name="isCache">
+                                <option value="1">是</option>
+                                <option value="0">否</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">备注说明</label>
+                        <div class="layui-input-block">
+                            <textarea id="comment" name="comment" placeholder="请输入备注说明"
+                                      class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-bottom text-center">
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+        <button type="reset" class="layui-btn layui-btn-primary" ew-event="closeDialog">&emsp;取消&emsp;</button>
+    </div>
+
+</form>
+@}

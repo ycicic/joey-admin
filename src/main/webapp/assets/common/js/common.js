@@ -142,7 +142,6 @@ layui.config({
     citypicker: 'city-picker/city-picker',
     introJs: 'introJs/introJs',
     zTree: 'zTree/zTree',
-
     //一下是Guns用的插件
     formSelects: '../../expand/module/formSelects/formSelects-v4',
     selectPlus: '../../expand/module/selectPlus/selectPlus',
@@ -156,7 +155,12 @@ layui.config({
     gunsCheckbox: '../../expand/module/gunsCheckbox/gunsCheckbox',
     gunsSelect: '../../expand/module/gunsSelect/gunsSelect',
     ws: '../../expand/module/webSocket/webSocket',
-    i18n: '../../expand/module/i18n/i18n'
+    i18n: '../../expand/module/i18n/i18n',
+    excel: '../../expand/module/soulTable/excel',
+    tableChild: '../../expand/module/soulTable/tableChild',
+    tableMerge: '../../expand/module/soulTable/tableMerge',
+    tableFilter: '../../expand/module/soulTable/tableFilter',
+    soulTable: '../../expand/module/soulTable/soulTable'
 
 }).use(['layer', 'admin'], function () {
     var $ = layui.jquery;
