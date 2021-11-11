@@ -29,7 +29,7 @@
 
 ### 快速启动
 
-1. 在mysql数据库中创建guns数据库，推荐mysql 5.7版本。
+1. 在mysql数据库中创建joey数据库，推荐mysql 5.7版本。
 
 2. 修改`application-local.yml`中的数据库连接配置连接到您的数据库。
 
