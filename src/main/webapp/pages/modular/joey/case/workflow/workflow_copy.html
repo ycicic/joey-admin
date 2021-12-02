@@ -1,0 +1,60 @@
+@layout("/layout/_form.html",{js:["/assets/modular/joey/case/workflow/workflow_copy.js"]}){
+
+<form class="layui-form" id="caseWorkflowForm" lay-filter="caseWorkflowForm">
+    <div class="layui-fluid" style="padding-bottom: 75px;">
+        <div class="layui-card">
+            <div class="layui-card-body">
+                <div class="layui-form-item layui-row">
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label layui-form-required">工作流ID</label>
+                        <div class="layui-input-block">
+                            <input id="id" name="id" type="text" class="layui-input" autocomplete="off" disabled/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label layui-form-required">关联用例组</label>
+                        <div class="layui-input-block">
+                            <input id="groupId" name="groupId" hidden/>
+                            <input id="groupModule" name="groupModule" type="text" class="layui-input" autocomplete="off" disabled/>
+                        </div>
+                    </div>
+                    <div id="joey-params">
+                        <div class="layui-inline layui-col-md12">
+                            <div class="layui-inline layui-col-md4">
+                                <label class="layui-form-label">执行变量</label>
+                                <div class="layui-input-block">
+                                    <input id="keys" name="keys" type="text" class="layui-input"
+                                           autocomplete="off" disabled/>
+                                </div>
+                            </div>
+                            <div class="layui-inline layui-col-md8">
+                                <input id="values" name="values" type="text" class="layui-input"
+                                       autocomplete="off" disabled/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">用例组备注</label>
+                        <div class="layui-input-block">
+                            <textarea id="groupComment" name="groupComment" class="layui-textarea" disabled></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">备注说明</label>
+                        <div class="layui-input-block">
+                            <textarea name="comment" placeholder="请输入备注说明" type="text" class="layui-textarea"
+                                      autocomplete="off"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-bottom text-center">
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+        <button type="reset" class="layui-btn layui-btn-primary" ew-event="closeDialog">&emsp;取消&emsp;</button>
+    </div>
+
+</form>
+
+@}

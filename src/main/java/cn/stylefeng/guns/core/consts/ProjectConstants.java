@@ -13,7 +13,7 @@ public interface ProjectConstants {
     /**
      * 项目的模块名称
      */
-    String PROJECT_MODULE_NAME = "guns-standalone";
+    String PROJECT_MODULE_NAME = "joey";
 
     /**
      * 异常枚举的步进值

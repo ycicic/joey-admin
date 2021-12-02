@@ -1,0 +1,58 @@
+@layout("/layout/_container.html",{js:["/assets/modular/joey/exec/workflow/workflow_exec.js"]}){
+
+<div class="layui-body-header">
+    <span class="layui-body-header-title">执行用例流</span>
+</div>
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-sm12 layui-col-md12 layui-col-lg12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <form class="layui-form toolbar">
+                        <div class="layui-form-item">
+                            <div class="layui-col-sm11 layui-col-md11 layui-col-lg11">
+                                <div class="layui-inline">
+                                    <input name="id" class="layui-input" type="text" placeholder="工作流ID"
+                                           autocomplete="off"/>
+                                </div>
+                                <div class="layui-inline">
+                                    <input name="groupId" class="layui-input" type="text" placeholder="用例组ID"
+                                           autocomplete="off"/>
+                                </div>
+                                <div class="layui-inline">
+                                    <input name="comment" class="layui-input" type="text" placeholder="备注"
+                                           autocomplete="off"/>
+                                </div>
+                                <div class="layui-inline">
+                                    <button lay-filter="btnSearch" lay-submit class="layui-btn icon-btn"><i
+                                            class="layui-icon">&#xe615;</i>搜索
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="layui-col-sm1 layui-col-md1 layui-col-lg1">
+                                <div id="buildTimeTrend" class="layui-inline">
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                    <table class="layui-table" id="caseWorkflowTable" lay-filter="caseWorkflowTable"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="caseWorkflowHtbBar">
+    {{# if(d.lastStatus == 1){ }}
+    <div class="layui-progress layui-progress-big" lay-filter="exec_{{ d.lastBuildNumber }}" lay-showPercent="true">
+        <div class="layui-progress-bar" lay-percent="0%"></div>
+    </div>
+    {{# } else { }}
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="exec">执行</a>
+    {{# } }}
+</script>
+
+@}

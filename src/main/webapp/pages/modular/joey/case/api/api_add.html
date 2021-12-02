@@ -1,0 +1,58 @@
+@layout("/layout/_form.html",{js:["/assets/modular/joey/case/api/api_add.js"]}){
+
+<form class="layui-form" id="hostForm" lay-filter="hostForm">
+    <div class="layui-fluid" style="padding-bottom: 75px;">
+        <div class="layui-card">
+            <div class="layui-card-body">
+                <div class="layui-form-item layui-row">
+                    <input id="hostId" name="hostId" hidden/>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label layui-form-required">API</label>
+                        <div class="layui-input-block">
+                            <input name="api" placeholder="请输入API" type="text" class="layui-input"
+                                   lay-verify="required" required autocomplete="off"/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label layui-form-required">请求方式</label>
+                        <div class="layui-input-block">
+                            <select name="requestMethod">
+                                <option value="GET">GET</option>
+                                <option value="POST">POST</option>
+                                <option value="OPTIONS">OPTIONS</option>
+                                <option value="HEAD">HEAD</option>
+                                <option value="PUT">PUT</option>
+                                <option value="DELETE">DELETE</option>
+                                <option value="TRACE">TRACE</option>
+                                <option value="CONNECT">CONNECT</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label layui-form-required">数据类型</label>
+                        <div class="layui-input-block">
+                            <select name="requestDataType">
+                                <option value="JSON">JSON</option>
+                                <option value="NONE">NONE</option>
+                                <option value="FORM">FORM</option>
+                                <option value="XML">XML</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <textarea id="comment" name="comment" placeholder="请输入备注" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-bottom text-center">
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+        <button type="reset" class="layui-btn layui-btn-primary" ew-event="closeDialog">&emsp;取消&emsp;</button>
+    </div>
+
+</form>
+@}

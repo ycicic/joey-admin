@@ -1,0 +1,105 @@
+@layout("/layout/_form.html", {js:["/assets/modular/joey/case/api/api_select.js"]}){
+
+<style>
+    #hostTable + .layui-table-view .layui-table-tool-temp {
+        padding-right: 0;
+    }
+
+    #hostTable + .layui-table-view .layui-table-body tbody > tr td {
+        cursor: pointer;
+    }
+
+    #hostTable + .layui-table-view .layui-table-body tbody > tr.layui-table-click {
+        background-color: #fff3e0;
+    }
+
+    #hostTable + .layui-table-view .layui-table-body tbody > tr.layui-table-click td:last-child > div:before {
+        position: absolute;
+        right: 6px;
+        content: "\e602";
+        font-size: 12px;
+        font-style: normal;
+        font-family: layui-icon !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+</style>
+
+<div class="layui-fluid" style="padding-bottom: 0;">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-body" style="padding: 10px;">
+                    <!-- 表格工具栏1 -->
+                    <form class="layui-form toolbar">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <input name="host" class="layui-input" type="text" placeholder="HOST"
+                                       autocomplete="off"/>
+                            </div>
+                            <div class="layui-inline">
+                                <button class="layui-btn icon-btn" lay-filter="hostTbSearch" lay-submit>
+                                    <i class="layui-icon">&#xe615;</i>搜索
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 数据表格1 -->
+                    <table id="hostTable" lay-filter="hostTable"></table>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md8">
+            <div class="layui-card">
+                <div class="layui-card-body" style="padding: 10px;">
+                    <!-- 表格工具栏2 -->
+                    <form class="layui-form toolbar">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <input name="api" class="layui-input" type="text" placeholder="API"
+                                       autocomplete="off"/>
+                            </div>
+                            <div class="layui-inline" aria-placeholder="请求方式">
+                                <select name="requestMethod" lay-filter="type">
+                                    <option value="">请选择请求方式</option>
+                                    <option value="GET">GET</option>
+                                    <option value="POST">POST</option>
+                                    <option value="OPTIONS">OPTIONS</option>
+                                    <option value="HEAD">HEAD</option>
+                                    <option value="PUT">PUT</option>
+                                    <option value="DELETE">DELETE</option>
+                                    <option value="TRACE">TRACE</option>
+                                    <option value="CONNECT">CONNECT</option>
+                                </select>
+                            </div>
+                            <div class="layui-inline" aria-placeholder="请求数据类型">
+                                <select name="requestDataType" lay-filter="type">
+                                    <option value="">请选择请求数据类型</option>
+                                    <option value="JSON">JSON</option>
+                                    <option value="NONE">NONE</option>
+                                    <option value="FORM">FORM</option>
+                                    <option value="XML">XML</option>
+                                </select>
+                            </div>
+                            <div class="layui-inline">&emsp;
+                                <button class="layui-btn icon-btn" lay-filter="apiTbSearch" lay-submit><i
+                                        class="layui-icon">&#xe615;</i>搜索
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 数据表格2 -->
+                    <table id="apiTable" lay-filter="apiTable"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 表格操作列 -->
+<script type="text/html" id="apiTbBar">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="select">选择</a>
+</script>
+<!-- 表格操作列结束 -->
+
+@}
